@@ -1,6 +1,6 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/react,sass
-# Edit at https://www.toptal.com/developers/gitignore?templates=react,sass
+# Edit at https://www.toptal.com/dev-elopers/gitignore?templates=react,sass
 
 ### react ###
 .DS_*
@@ -25,3 +25,5 @@ sketch
 *.scss.map
 
 # End of https://www.toptal.com/developers/gitignore/api/react,sass
+
+build

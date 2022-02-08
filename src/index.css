@@ -1,97 +1,125 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-.home-wrapper .content {
+@import url("http://fonts.cdnfonts.com/css/lexend-deca:wght@300;400;500;700;900&display=swap");
+/* Style Component */
+.screen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 700px;
-  width: auto;
-  margin: auto;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
-.home-wrapper .content .screen {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 380px;
-  margin: 10% 0;
-}
-
-.home-wrapper .content .screen .title {
-  font-size: 2.75rem;
-  margin: 0;
-  font-weight: 800;
-}
-
-.home-wrapper .content .screen .subtitle {
-  font-size: calc(1rem);
-  font-weight: 600;
-  margin: 0 0 30px 0;
-  color: rgba(51, 51, 51, 0.9);
-}
-
-.home-wrapper .content .screen .right-aligned {
-  text-align: right;
-}
-
-.home-wrapper .content .screen .button {
-  padding: 8px 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.screen.center-content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid rgba(251, 176, 64, 0.9);
-  border-radius: 4px;
-  cursor: pointer;
+}
+
+/* Component Style */
+.input-component {
+  background: #edf3ff;
+  border: solid 2px #edf3ff;
+  border-radius: 8px;
+  padding: 8px;
+  color: #101010;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.input-component:focus {
+  outline: none;
+  border: solid 2px #8a8fdb;
+}
+
+.input-component.long {
+  width: calc(100% - 16px - 4px);
+}
+
+.button-component {
+  display: block;
+  background: #8a8fdb;
+  padding: 15px;
+  color: whitesmoke;
+  font-size: 18px;
+  text-transform: uppercase;
   font-weight: 600;
-  font-size: 1rem;
-  color: #000000;
-  background-color: rgba(251, 176, 64, 0.8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.home-wrapper .content .screen:nth-child(1) {
-  margin: 25% 0;
+.button-component.long {
+  width: 100%;
 }
 
-.home-wrapper .content .screen:nth-child(2) {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+.login-screen .title {
+  color: #8a8fdb;
+  font-size: 64px;
+  font-weight: 600;
+  margin: 20px 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .home-wrapper .content {
-    padding: 20px;
+.login-screen .title.small {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.login-screen .login-form {
+  max-width: 300px;
+}
+
+.admin-dashboard-screen {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.admin-dashboard-screen .navbar-mobile {
+  background: red;
+  display: none;
+}
+
+@media only screen and (max-width: 762px) {
+  .admin-dashboard-screen .navbar-mobile {
+    width: 64px;
+    display: block;
   }
-  .home-wrapper .content .screen {
-    height: 40vh;
-    width: 100%;
+  .admin-dashboard-screen .navbar-mobile > .content {
+    height: 100%;
+    width: 256px;
+    position: absolute;
+    left: -256px;
   }
-  .home-wrapper .content .screen .title {
-    font-size: 2.5rem;
+}
+
+.admin-dashboard-screen .navbar {
+  width: 256px;
+  background: red;
+}
+
+@media only screen and (max-width: 762px) {
+  .admin-dashboard-screen .navbar:not(.content) {
+    display: none;
   }
+}
+
+.admin-dashboard-screen > .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: blue;
 }
 
 body {
   margin: 0;
+  background: #FDFEFF;
+  font-family: 'Lexend Deca', sans-serif;
 }
 /*# sourceMappingURL=index.css.map */
