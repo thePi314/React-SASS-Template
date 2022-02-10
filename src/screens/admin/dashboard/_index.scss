@@ -2,11 +2,10 @@
     flex-flow: row;
     
     .navbar-mobile {
-        background: red;
+        width: 64px;
         display: none;
 
-        @media only screen and (max-width: 762px) {
-            width: 64px;
+        @media only screen and (max-width: 768px) {
             display: block;
 
             & > .content {
@@ -21,9 +20,8 @@
 
     .navbar {
         width: 256px;
-        background: red;
 
-        @media only screen and (max-width: 762px) {
+        @media only screen and (max-width: 768px) {
             &:not(.content){
                 display: none;
             }
@@ -33,6 +31,10 @@
     
     & > .content {
         flex: 1;
-        background: blue;
+        background: #F8F8F8;
+        padding: 100px 35px;
+        
     }
 }
+
+@import "./navbar/index";

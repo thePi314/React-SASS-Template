@@ -9,6 +9,9 @@ const ButtonComponent = (props) => {
             onClick={props?.onClick}
             className={`button-component ${props?.className ?? ''}`}
             style={props?.style}
+            tabIndex={props?.tabIndex}
+            onKeyDown={props?.onKeyDown}
+            id={props?.id}
         >{props?.children}</button>
     )
 } 

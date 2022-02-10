@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 
 import InputComponent from "../../components/input";
 import { LongButtonComponent } from "../../components/button";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const TEST_DATA = [
     {
@@ -73,19 +72,45 @@ const Login = () => {
                     type="text"
                     className="long"
                     placeholder={"Email or Username"}
+                    id="input-emailOrUsername"
+                    onKeyDown={(evt)=>{
+                        switch(evt.key){
+                            case 'Enter':
+                                document.getElementById('input-password').focus();
+                                break;
+                        }
+                    }}
                 />
                 <InputComponent
                     setValue={(value) => setAuthData({ ...authData, password: value })}
                     type="password"
+                    id="input-password"
                     style={{
                         margin: '10px 0 40px'
                     }}
                     className="long"
-                    placeholder={"Password"}
+                    placeholder="Password"
+                    onKeyDown={(evt)=>{
+                        switch(evt.key){
+                            case 'Enter':
+                                document.getElementById('button-submit').focus();
+                                break;
+                        }
+                        
+                    }}
                 />
 
                 <LongButtonComponent
                     onClick={submitAuthData}
+                    id="button-submit"
+                    onKeyDown={(evt)=>{
+                        switch(evt.key){
+                            case 'Enter':
+                                evt.target.click();
+                                break;
+                        }
+                        
+                    }}
                 >Submit</LongButtonComponent>
             </div>
 
