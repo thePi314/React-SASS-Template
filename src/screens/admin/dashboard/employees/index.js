@@ -11,19 +11,7 @@ const EmployeesSegment = () => {
 
     return (
         <div className="segmnet employees-segment">
-            <IconInputComponent
-                value={search}
-                setValue={setSearch}
-                placeholder={"Search ..."}
-                icon={SearchIcon}
-            />
-            <div
-                style={{
-                    display:'flex'
-                }}
-            >
-                <DropdownComponent/>
-            </div>
+            RADNICI
         </div>
     )
 } 
