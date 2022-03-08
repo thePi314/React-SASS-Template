@@ -4,6 +4,7 @@ import EmployeesSegment from "./employees";
 import CandidatesSegment from "./candidates";
 
 import Avatar from "../../../assets/images/avatar.png"
+import Table from "../../../components/table";
 
 
 const DashboardRoutes = [
@@ -23,7 +24,9 @@ const AdminDashboard = () => {
     const [activeRoute, setActiveRoute] = useState(0);
 
     return (
-        <div className="screen admin-dashboard-screen"></div>
+        <div className="screen admin-dashboard-screen">
+            <Table />
+        </div>
     );
 };
 

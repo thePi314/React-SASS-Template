@@ -137,6 +137,70 @@
   width: 100%;
 }
 
+.table {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.table table .header {
+  background-color: #FFF5A2;
+}
+
+.table table tr {
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+}
+
+.table table td {
+  text-align: center;
+  background-color: #FCFCFC;
+}
+
+.table table th,
+.table table td {
+  padding: 8px;
+  height: 10px;
+}
+
+.table .pagination {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid #e0e0e0;
+}
+
+.table .pagination .pagination-link {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e0e0e0;
+  width: 30px;
+  height: 30px;
+  background-color: whitesmoke;
+}
+
+.table .pagination .pagination-link.active {
+  background-color: #6565f5;
+}
+
 .login-screen .title {
   color: #8a8fdb;
   font-size: 64px;
@@ -193,82 +257,6 @@
           flex: 1;
   background: #F8F8F8;
   padding: 100px 35px;
-}
-
-.navbar,
-.navbar-mobile {
-  background: #8a8fdb;
-}
-
-.navbar .profile-description {
-  text-align: center;
-  padding: 20px 10px;
-}
-
-.navbar .profile-description .avatar {
-  border-radius: 50%;
-  margin: 20px 0;
-}
-
-.navbar .profile-description .name {
-  font-size: 20px;
-  color: white;
-}
-
-.navbar .profile-description .roles {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-}
-
-.navbar .profile-description .roles .role {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  padding: 6px;
-  font-size: 14px;
-  background: #F8F8F8;
-  color: #2c2c2c;
-  margin: 4px auto;
-  border-radius: 6px;
-}
-
-.navbar .items .item {
-  cursor: pointer;
-  padding: 8px;
-  margin: 4px auto;
-  color: white;
-  font-size: 16px;
-  max-width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.navbar .items .item.active {
-  background: #F8F8F8;
-  color: #8a8fdb;
-  cursor: unset;
-}
-
-.navbar .items .item .icon {
-  width: 26px;
-  height: 26px;
-  margin-right: 8px;
 }
 
 body {
