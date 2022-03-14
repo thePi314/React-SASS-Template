@@ -1,0 +1,37 @@
+.table {
+  width: 900px;
+  .header {
+    background-color: #fff5a2;
+    display: flex;
+  }
+  .cell {
+    padding: 5px;
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 4px 4px gray;
+    margin-top: 3px;
+  }
+  .row {
+    display: flex;
+  }
+}
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  width: fit-content;
+  border: none;
+  .pagination-link {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    &.active {
+      background-color: gray;
+    }
+  }
+}
