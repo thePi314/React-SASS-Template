@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Table = () => {
+const Table = (props) => {
   let data = [
     //dummy data
     {
@@ -33,7 +33,7 @@ const Table = () => {
       faza_obuke: "Voznja",
       ostatak_novca_za_isplatu: 254,
     }, {
-      ime_i_prezime: "SAJO mujicadwawdawd",
+      ime_i_prezime: "SAJO mujica",
       broj_casova: "22",
       faza_obuke: "Voznja",
       ostatak_novca_za_isplatu: 250,
@@ -108,7 +108,7 @@ const Table = () => {
 
   const [pageSize, setPageSize] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
-  const [range, setRange] = useState([]);
+  const [range, sedivange] = useState([]);
   const [paginatedRows, setPaginatedRows] = useState([]);
 
   useEffect(() => {
@@ -117,61 +117,77 @@ const Table = () => {
 
     const totalPageCount = Math.ceil(numberOfRows / pageSize);
 
-    setRange(rangeArray(1, totalPageCount));
+    sedivange(rangeArray(1, totalPageCount));
 
     // setting first 5 posts
-    setPaginatedRows(data.slice(0, pageSize));
+    let newData=data.slice(0, pageSize);    
+    // newData.map(data=>{return(...data,props}))
+
+    setPaginatedRows(newData);
 
   }, [])
 
   const changePagination = (index) => {
 
+    const max=Math.max(...range);
+    const min=Math.min(...range);
+
+    if(index>max || index<min)
+      return;
+
     setCurrentPage(index);
 
     const startIndex = (index - 1) * pageSize;
-
-    // console.log("slajsam od:", startIndex, " do:", startIndex + 5)
 
     setPaginatedRows(data.slice(startIndex, startIndex + 5))
   }
 
   return (
-    <div className="table">
-      <table>
-        <thead>
-          <tr className="header">
-            {data &&
-              data.length > 0 &&
-              Object.keys(data[0]).map((key, i) => {
-                return <th key={i}> {key.replaceAll("_", " ")}</th>;
-              })}
-          </tr>
-        </thead>
-        <tbody>
-          {paginatedRows.map((person, i) => {
-            return (
-              <tr key={i}>
-                {data &&
-                  data.length > 0 &&
-                  Object.values(person).map((value, i) => {
-                    return <td key={i}>{value}</td>;
-                  })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <div className="pagination">
-        {range.map((value) => {
+    <>
+      <div className="table">
+        <div className="row header">
+          {data &&
+            data.length > 0 &&
+            Object.keys(data[0]).map((key, i) => {
+              return (<div key={i} className="cell header"> {key.replace(/_/g," ")}</div>)
+            })}
+            {props.actions ? <div className="cell header">Akcija </div> : ""}
+        </div>
+
+        {paginatedRows.map((person, i) => {
           return (
-            <div className={`pagination-link ${value == currentPage ? "active" : ""}`}
-              key={value}
-              onClick={() => { changePagination(value) }}
-            >{value}</div>
-          )
+            <div key={i} className="row">
+              {data &&
+                data.length > 0 &&
+                Object.values(person).map((value, i) => {
+                  return (
+                    <>
+                    <div key={i} className="cell">{value}</div>
+                    
+                    </>
+                  )
+                })}
+                {props.actions ? <div className="cell">{props.actions.map(action=>{
+                  return (
+                    <span className="action-icon"
+                          onClick={action.onClick ?? action.onClick}
+                    >{action.icon ? <img src={action.icon} /> : ""}</span>
+                  )
+                })} </div> : ''}
+            </div>
+          );
         })}
+        <div className="pagination">
+          <div className="left"
+            onClick={()=>changePagination(currentPage - 1)}
+            > 
+              &lt;
+              </div>
+          <div className="value">{currentPage}</div>
+          <div className="right" onClick={()=>changePagination(currentPage + 1)}>&gt;</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -138,54 +138,75 @@
 }
 
 .table {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  overflow-x: auto;
-  overflow-y: auto;
-}
-
-.table table .header {
-  background-color: #FFF5A2;
-}
-
-.table table tr {
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-}
-
-.table table td {
-  text-align: center;
-  background-color: #FCFCFC;
-}
-
-.table table th,
-.table table td {
-  padding: 8px;
-  max-width: 200px;
-}
-
-.table table td {
-  max-width: 170px;
-  overflow-wrap: break-word;
-}
-
-.table .pagination {
-  margin-top: 5px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: 1px solid #e0e0e0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: auto;
 }
 
-.table .pagination .pagination-link {
+.table .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.table .cell {
+  background-color: white;
+  padding: 10px;
+  word-wrap: break-word;
+  width: 130px;
+  text-align: center;
+}
+
+.table .cell .action-icon {
+  margin: 0px 8px;
   cursor: pointer;
+}
+
+.table .cell .action-icon img {
+  width: 15px;
+  height: 15px;
+}
+
+.table .header {
+  background-color: #FFF5A2;
+}
+
+.table .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 205px;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.table .pagination .left, .table .pagination .right {
+  height: 40px;
+  max-height: 40px;
+  width: 50px;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,14 +216,33 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #e0e0e0;
-  width: 30px;
-  height: 30px;
-  background-color: whitesmoke;
 }
 
-.table .pagination .pagination-link.active {
-  background-color: #6565f5;
+.table .pagination .right {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.table .pagination .left {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.table .pagination .value {
+  width: 60px;
+  background-color: yellow;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
 }
 
 .login-screen .title {
@@ -226,6 +266,7 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
+  background-color: #c4c4c4;
 }
 
 .admin-dashboard-screen .navbar-mobile {

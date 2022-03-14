@@ -6,6 +6,10 @@ import CandidatesSegment from "./candidates";
 import Avatar from "../../../assets/images/avatar.png"
 import Table from "../../../components/table";
 
+//icons
+import dots from "../../../assets/icons/dots.svg";
+import arrow_down_left from "../../../assets/icons/arrow-down-left.svg";
+import trash from "../../../assets/icons/trash.svg";
 
 const DashboardRoutes = [
     {
@@ -25,7 +29,31 @@ const AdminDashboard = () => {
 
     return (
         <div className="screen admin-dashboard-screen">
-            <Table />
+            <div className="container">
+                <Table 
+                    // data={data}
+                    actions={[{
+                        icon:dots,
+                        onClick:()=>{
+                            console.log("Edit akcija")
+                        }
+                    },
+                    {
+                        icon:arrow_down_left,
+                        onClick:()=>{
+                            console.log("Delete akcija")
+                        }
+                    },
+                    {
+                        icon:trash,
+                        onClick:()=>{
+                            console.log("Open akcija")
+                        }
+                    }
+                ]
+                }
+                />
+            </div>
         </div>
     );
 };
