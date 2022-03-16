@@ -1,0 +1,50 @@
+.navbar{
+    background-color:#5e61aa;
+    width:calc(#{$owid} - 250px);
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transition:all ease 0.5s;
+
+    .tabs{
+        color: white;
+        height: 60px;
+        font-size: 24px;
+        border-top: white 1px  solid;
+        padding-top: 25px;
+        padding-left: 10px;
+        text-indent: -9999px;
+    }
+}
+.open{
+    transition:all ease 0.5s;
+    width: $owid;
+
+    .tabs{
+        color: white;
+        height: 60px;
+        font-size: 24px;
+        border-top: white 1px  solid;
+        padding-top: 25px;
+        padding-left: 10px;
+        text-indent: 0px;
+       
+        
+    }
+}
+
+
+.hambas{
+    height:30px;
+    width: 30px;
+    color: white;
+    margin: 10px;
+}
+.screen{
+    display: inline-block;
+}
+
+.tabs:hover{
+background-color: #b4b6e4;
+}
