@@ -36,60 +36,70 @@ const Table = (props) => {
       ime_i_prezime: "SAJO mujica",
       broj_casova: "22",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 250,
+      ostatak_novca_za_isplatu: 255,
     },
     {
       ime_i_prezime: "Imran Plasto",
       broj_casova: "/",
       faza_obuke: "Prva Pomoc",
-      ostatak_novca_za_isplatu: 999,
+      ostatak_novca_za_isplatu: 996,
     },
     {
       ime_i_prezime: "Amar Sila",
       broj_casova: "11",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 911,
+      ostatak_novca_za_isplatu: 917,
     },
     {
       ime_i_prezime: "Sumea mujic",
       broj_casova: "22",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 253,
+      ostatak_novca_za_isplatu: 258,
     },
     {
       ime_i_prezime: "Kanita mujic",
       broj_casova: "22",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 254,
+      ostatak_novca_za_isplatu: 259,
     }, {
       ime_i_prezime: "Evvel Kamenjas",
       broj_casova: "22",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 250,
+      ostatak_novca_za_isplatu: 260,
     },
     {
       ime_i_prezime: "hamza kamenjas",
       broj_casova: "33",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 231,
+      ostatak_novca_za_isplatu: 262,
     },
     {
       ime_i_prezime: "Jon doe",
       broj_casova: "/",
       faza_obuke: "prva pomoc",
-      ostatak_novca_za_isplatu: 111,
+      ostatak_novca_za_isplatu: 263,
     },
     {
       ime_i_prezime: "Fata mujic",
       broj_casova: "21",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 253,
+      ostatak_novca_za_isplatu: 264,
     },
     {
-      ime_i_prezime: "Kata mujic",
+      ime_i_prezime: "Kata mujic1",
       broj_casova: "22",
       faza_obuke: "Voznja",
-      ostatak_novca_za_isplatu: 254,
+      ostatak_novca_za_isplatu: 265,
+    },{
+      ime_i_prezime: "Kata mujic2",
+      broj_casova: "22",
+      faza_obuke: "Voznja",
+      ostatak_novca_za_isplatu: 266,
+    },{
+      ime_i_prezime: "Kata mujic3",
+      broj_casova: "22",
+      faza_obuke: "Voznja",
+      ostatak_novca_za_isplatu: 267,
     },
     //  DRUGA TABELA - moras staviti sve pod komentar do ovoga
     // {
@@ -110,9 +120,11 @@ const Table = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [range, sedivange] = useState([]);
   const [paginatedRows, setPaginatedRows] = useState([]);
-
+  const sizes=[5,10,15,20];
   useEffect(() => {
+    setCurrentPage(1);
 
+    setPaginatedRows([])
     const numberOfRows = data.length;
 
     const totalPageCount = Math.ceil(numberOfRows / pageSize);
@@ -120,13 +132,20 @@ const Table = (props) => {
     sedivange(rangeArray(1, totalPageCount));
 
     // setting first 5 posts
-    let newData=data.slice(0, pageSize);    
-    // newData.map(data=>{return(...data,props}))
+    // let newData=data.slice(0, pageSize); 
+    console.log("tare:",data.slice(0, pageSize));
+    setPaginatedRows(data.slice(0,pageSize));
 
-    setPaginatedRows(newData);
+  }, [pageSize])
 
-  }, [])
-
+  useEffect(() => {
+    
+    console.log("Promjena pagnated rows,",paginatedRows)
+    // setCurrentPage(1);
+    
+    
+  }, [paginatedRows])
+  
   const changePagination = (index) => {
 
     const max=Math.max(...range);
@@ -138,12 +157,12 @@ const Table = (props) => {
     setCurrentPage(index);
 
     const startIndex = (index - 1) * pageSize;
-
-    setPaginatedRows(data.slice(startIndex, startIndex + 5))
+    // console.log("startIndex:",startIndex,"Do:",Number(startIndex) + Number(pageSize))
+    setPaginatedRows(data.slice(startIndex, Number(startIndex) + Number(pageSize)))
   }
 
   return (
-    <>
+    <div className="table-container">
       <div className="table">
         <div className="row header">
           {data &&
@@ -178,16 +197,28 @@ const Table = (props) => {
           );
         })}
         <div className="pagination">
-          <div className="left"
-            onClick={()=>changePagination(currentPage - 1)}
-            > 
-              &lt;
+          <div className="changing">
+            <div className="left"
+              onClick={()=>changePagination(currentPage - 1)}
+              > 
+                &lt;
               </div>
-          <div className="value">{currentPage}</div>
-          <div className="right" onClick={()=>changePagination(currentPage + 1)}>&gt;</div>
+            <div className="value">{currentPage}</div>
+            <div className="right" onClick={()=>changePagination(currentPage + 1)}>&gt;</div>
+          </div>
+          <div className="page-number">
+            <select className="selekt"
+              onChange={(e)=>{setPageSize(e.target.value)}}
+            > 
+              {sizes.map(size=>{
+                return <option value={size}>{size}</option>
+              })}
+            </select>
+            
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
