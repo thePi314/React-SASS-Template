@@ -2,9 +2,6 @@
     background-color:#5e61aa;
     width:calc(#{$owid} - 250px);
     height: 100vh;
-    position: fixed;
-    top: 0px;
-    left: 0px;
     transition:all ease 0.5s;
 
     .tabs{
@@ -40,9 +37,6 @@
     width: 30px;
     color: white;
     margin: 10px;
-}
-.screen{
-    display: inline-block;
 }
 
 .tabs:hover{

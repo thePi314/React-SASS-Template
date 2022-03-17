@@ -4,12 +4,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  min-width: 100vw;
-  min-height: 100vh;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .screen.center-content {
@@ -141,9 +142,6 @@
   background-color: #5e61aa;
   width: calc(300px - 250px);
   height: 100vh;
-  position: fixed;
-  top: 0px;
-  left: 0px;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
@@ -179,10 +177,6 @@
   width: 30px;
   color: white;
   margin: 10px;
-}
-
-.screen {
-  display: inline-block;
 }
 
 .tabs:hover {
@@ -245,6 +239,82 @@
           flex: 1;
   background: #F8F8F8;
   padding: 100px 35px;
+}
+
+.navbar,
+.navbar-mobile {
+  background: #8a8fdb;
+}
+
+.navbar .profile-description {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.navbar .profile-description .avatar {
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+.navbar .profile-description .name {
+  font-size: 20px;
+  color: white;
+}
+
+.navbar .profile-description .roles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.navbar .profile-description .roles .role {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 6px;
+  font-size: 14px;
+  background: #F8F8F8;
+  color: #2c2c2c;
+  margin: 4px auto;
+  border-radius: 6px;
+}
+
+.navbar .items .item {
+  cursor: pointer;
+  padding: 8px;
+  margin: 4px auto;
+  color: white;
+  font-size: 16px;
+  max-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .items .item.active {
+  background: #F8F8F8;
+  color: #8a8fdb;
+  cursor: unset;
+}
+
+.navbar .items .item .icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
 }
 
 body {
