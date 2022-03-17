@@ -1,37 +1,81 @@
-.table {
-  width: 900px;
-  .header {
-    background-color: #fff5a2;
-    display: flex;
+.center {
+  margin: auto auto;
+
+  .table {
+    box-shadow: 0px 3px 3px gray;
+    width: 1000px;
+    .header {
+      background-color: #fff5a2;
+      display: flex;
+      box-shadow: 0px 1px 1px gray;
+      font-weight: bold;
+    }
+    .cell {
+      padding: 5px;
+      width: 1000px;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5px;
+    }
+    .row {
+      display: flex;
+      box-shadow: 0px 1px 1px gray;
+    }
   }
-  .cell {
-    padding: 5px;
-    width: 800px;
+  .pagination {
+    margin: auto auto;
     display: flex;
-    justify-content: space-around;
-    box-shadow: 0px 4px 4px gray;
-    margin-top: 3px;
-  }
-  .row {
-    display: flex;
-  }
-}
-.pagination {
-  margin-top: 10px;
-  display: flex;
-  width: fit-content;
-  border: none;
-  .pagination-link {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: fit-content;
     border: none;
-    width: 25px;
-    height: 25px;
-    background-color: transparent;
-    &.active {
-      background-color: gray;
+    .change {
+      display: flex;
+      margin-top: 10px;
+      .left-arrow,
+      .right-arrow {
+        height: 25px;
+        max-height: 25px;
+        width: 30px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .right-arrow {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0px 3px 3px gray;
+        cursor: pointer;
+      }
+      .left-arrow {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 0px 3px 3px gray;
+        cursor: pointer;
+      }
+      .value {
+        width: 35px;
+        height: 25px;
+        background-color: white;
+        box-shadow: 0px 3px 3px gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .pages {
+      margin: 10px 10px 0px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      box-shadow: 0px 3px 3px gray;
+      width: fit-content;
+      height: 25px;
+      background-color: transparent;
+    }
+    .icon {
+      height: 10px;
+      width: 10px;
     }
   }
 }
