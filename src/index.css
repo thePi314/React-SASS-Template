@@ -1,5 +1,12 @@
 @import url("http://fonts.cdnfonts.com/css/lexend-deca:wght@300;400;500;700;900&display=swap");
 /* Style Component */
+.newbutton{
+  width: 484px;
+   height: 52px;
+   background: transparent;
+   border-color: #B09B54;
+   border-radius: 10%;
+}
 .screen {
   display: -webkit-box;
   display: -ms-flexbox;
