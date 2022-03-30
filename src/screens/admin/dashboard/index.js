@@ -4,12 +4,10 @@ import EmployeesSegment from "./employees";
 import CandidatesSegment from "./candidates";
 
 import Avatar from "../../../assets/images/avatar.png"
+
+import Table from "../../../components/table/index"
 import TableT from "../../../components/tableT";
 
-//icons
-import dots from "../../../assets/icons/dots.svg";
-import arrow_down_left from "../../../assets/icons/arrow-down-left.svg";
-import trash from "../../../assets/icons/trash.svg";
 
 const DashboardRoutes = [
     {
@@ -29,8 +27,8 @@ const AdminDashboard = () => {
 
     return (
         <div className="screen admin-dashboard-screen">
-            <div className="container">
-                <TableT 
+          <Table />
+          <TableT 
                     // data={data}
                     actions={[{
                         icon:dots,
@@ -53,8 +51,8 @@ const AdminDashboard = () => {
                 ]
                 }
                 />
-            </div>
         </div>
+
     );
 };
 
