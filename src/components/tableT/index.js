@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Table = (props) => {
+const TableT = (props) => {
   let data = [
     //dummy data
     {
@@ -222,4 +222,4 @@ const Table = (props) => {
   );
 };
 
-export default Table;
+export default TableT;

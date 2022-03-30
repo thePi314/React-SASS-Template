@@ -4,7 +4,7 @@ import EmployeesSegment from "./employees";
 import CandidatesSegment from "./candidates";
 
 import Avatar from "../../../assets/images/avatar.png"
-import Table from "../../../components/table";
+import TableT from "../../../components/tableT";
 
 //icons
 import dots from "../../../assets/icons/dots.svg";
@@ -30,7 +30,7 @@ const AdminDashboard = () => {
     return (
         <div className="screen admin-dashboard-screen">
             <div className="container">
-                <Table 
+                <TableT 
                     // data={data}
                     actions={[{
                         icon:dots,
