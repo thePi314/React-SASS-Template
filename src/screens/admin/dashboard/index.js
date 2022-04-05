@@ -7,6 +7,10 @@ import Avatar from "../../../assets/images/avatar.png"
 
 import Table from "../../../components/table/index"
 import TableT from "../../../components/tableT";
+import AddQue from "../../../components/AddQue/index";
+import dots from "../../../assets/icons/dots.svg"
+import arrow_down_left from "../../../assets/icons/arrow-down-left.svg"
+
 
 
 const DashboardRoutes = [
@@ -28,6 +32,7 @@ const AdminDashboard = () => {
     return (
         <div className="screen admin-dashboard-screen">
           <Table />
+          <AddQue/>
           <TableT 
                     // data={data}
                     actions={[{
