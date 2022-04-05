@@ -7,6 +7,9 @@ import Avatar from "../../../assets/images/avatar.png"
 
 import Table from "../../../components/table/index"
 import TableT from "../../../components/tableT";
+import dots from "../../../assets/icons/dots.svg";
+import arrow_down_left from "../../../assets/icons/arrow-down-left.svg";
+import trash from "../../../assets/icons/trash.svg";
 
 
 const DashboardRoutes = [
