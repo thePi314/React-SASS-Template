@@ -25,9 +25,9 @@ const Pitanja= () => {
         >
         <div className='AddQue'>
           <h1>Dodavanje pitanja</h1>
-            <label for="text"><h3>Text pitanja</h3></label>
-            <input type="button" name="text" id='text' ></input>
-            <label for="kategorija"><h3>Kategorija</h3></label>
+            <label for="text"><h2>Text pitanja</h2></label>
+            <input type="text" name="text" id='text'/>
+            <label for="kategorija"><h2>Kategorija</h2></label>
             <select id="kategorija" name="kategorija">
               <option value="Teorija">Teorija</option>
               <option value="Znak">Znak</option>

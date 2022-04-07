@@ -17,6 +17,20 @@
         border: black 1px solid;
         background: rgb(192, 191, 191);
         border-radius: 20px;
+        #text{
+            width: 600px;
+            height: 100px;
+            background-color: white;
+            border-radius: 10px;
+            font-size: 35px;
+        }
+        #kategorija{
+            width: 600px;
+            height: 100px;
+            font-size: 35px;
+            background-color: white;
+            border-radius: 10px;
+        }
 
         .header{}
         .body{}
