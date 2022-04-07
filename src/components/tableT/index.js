@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const TableT = (props) => {
   let data = [
-    //useState [data,setData]=useState();
     //dummy data
     {
       ime_i_prezime: "Tairk Besic",

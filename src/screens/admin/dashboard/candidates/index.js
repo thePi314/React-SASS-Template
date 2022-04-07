@@ -1,10 +1,12 @@
 import React from "react";
+import Calender from "../../../../components/calender/index";
+
 
 
 const CandidatesSegment = () => {
     return (
-        <div className="segmnet candidates-segment">
-            Candidates
+        <div className="candidates-segment">
+            <Calender />
         </div>
     )
 } 
