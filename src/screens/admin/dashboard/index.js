@@ -30,30 +30,8 @@ const AdminDashboard = () => {
 
     return (
         <div className="screen admin-dashboard-screen">
-          <Table />
-          <TableT 
-                    // data={data}
-                    actions={[{
-                        icon:dots,
-                        onClick:()=>{
-                            console.log("Edit akcija")
-                        }
-                    },
-                    {
-                        icon:arrow_down_left,
-                        onClick:()=>{
-                            console.log("Delete akcija")
-                        }
-                    },
-                    {
-                        icon:trash,
-                        onClick:()=>{
-                            console.log("Open akcija")
-                        }
-                    }
-                ]
-                }
-                />
+          
+          
         </div>
 
     );
